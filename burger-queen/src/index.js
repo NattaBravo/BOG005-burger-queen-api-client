@@ -9,7 +9,12 @@ root.render(
   /*<React.StrictMode>
     <App />
   </React.StrictMode>*/
-  <p>Natalia y Yenny</p>
+  <p>Natalia y Yenny</p>,
+  <h1>"hello word Nata"</h1>
+  // <React.StrictMode>
+  //   <App />
+  // </React.StrictMode>
+
 );
 
 // If you want to start measuring performance in your app, pass a function
