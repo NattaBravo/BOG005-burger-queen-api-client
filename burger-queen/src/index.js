@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<h1>"hello word Nata"</h1>
+root.render(<h1>"hello word Nata como estas"</h1>
   // <React.StrictMode>
   //   <App />
   // </React.StrictMode>
