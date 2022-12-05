@@ -1,0 +1,49 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.LoginContainer {
+margin: 0;
+display: flex;
+}
+.backgroundImg{
+  width: 91vh;
+  height: 100%;
+}
+.BQtitle {
+  width: 300px;
+  display: block;
+  align-items: center;
+}
+.LoginForm{
+  background-color: #F2E9E0;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+}
+.logoBQ{
+  width: 100px;
+  margin-top: 120px;
+}
+
+.inputLogin{
+  width: 250px;
+  height: 40px;
+  color: black;
+  font-weight: bolder;
+  border-radius: 30px;
+  margin: 10px;
+  background-color: white;
+  border: none;
+  display: block;
+}
+.buttonLogin{
+  background-color:#ffdb25;
+  border-radius: 30px;
+  margin: 10px;
+  width: 200px;
+  height: 40px;
+  border: 1px;
+  font-weight: bold;
+  font-size: 20px;
+}
