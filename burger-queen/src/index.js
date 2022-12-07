@@ -15,13 +15,13 @@ import {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-
    <BrowserRouter>
         <Routes>
-            <Route exact path="/" element={<Login />}/>
+            <Route  path="/" element={<Login/>}>
+               
+            </Route>
         </Routes>
    </BrowserRouter>
-   
 
 
 );
