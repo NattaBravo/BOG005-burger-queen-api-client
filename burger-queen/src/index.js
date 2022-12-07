@@ -17,12 +17,11 @@ import {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
    <BrowserRouter>
-      <Routes>
-         <Route path="/" element={<Login />}/>
-         <Route path="/admin" element={<AdminPage />}/>
-         <Route path="/waiter" element={<WaiterPage />}/>
-
-      </Routes>
+        <Routes>
+            <Route  path="/" element={<Login/>}>
+               
+            </Route>
+        </Routes>
    </BrowserRouter>
 
 
