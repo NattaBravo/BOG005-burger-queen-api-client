@@ -1,0 +1,1 @@
+export const ApiRest = 'https://app.swaggerhub.com/apis/ssinuco/BurgerQueenAPI/2.0.0#/auth/getToken';
