@@ -18,12 +18,10 @@ export function Login() {
 
   const emailController = (e) => {
     setEmail(e.target.value);
-    console.log(e.target.value)
   };
 
   const passwordController = (e) => {
     setPassword(e.target.value)
-    console.log(e.target.value)
   };
 
   const submit = (e) => {
@@ -35,13 +33,10 @@ export function Login() {
       .post(url, {
         email: email,
         password: password,
-        /*headers: {
-          "content-type": "application/json",
-        }*/
       })
       .then((response) => {
-        //console.log(response.data);
-        //alert("funciona!")
+        console.log(response.data);
+        window.localStorage.setItem("token", response.data.accessToken);
         const role = response.data.user.role;
         alert("Entrando")
         switch (role) {
@@ -58,16 +53,6 @@ export function Login() {
           default:
 
         }
-
-        // console.log(role);
-        // if (role === "admin"){
-        //   alert("Este if si funciona!");
-        //   nav(AdminPage);
-        // }
-
-
-        /*localStorage.setItem("Token", response.data.accessToken);
-        eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imdy;*/
       })
       .catch(error => console.log(error))
   }
@@ -90,14 +75,14 @@ export function Login() {
             name="email"
             onChange={emailController}
           ></input>
-          <p className='pLogin'>Contraseña</p>
+          <p className='pPassword'>Contraseña</p>
           <input
             className='inputLogin'
             name='password'
             onChange={passwordController}
           ></input>
           <button className='buttonLogin' onClick={loginFunction}>Login</button>
-          <p>¿Olvidaste tu constraseña?</p>
+      
         </section>
       </section>
 

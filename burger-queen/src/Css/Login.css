@@ -4,40 +4,39 @@
   padding: 0;
 }
 
+@media (min-width: 0px) and (max-width: 350px) {
 .LoginContainer {
-margin: 0;
-display: flex;
+  margin: 0;
+  display: flex;  
 }
 .backgroundImg{
-  
-  height: 100vh;
-}
-.BQtitle {
-  width: 300px;
-  align-items: center;
-  display: block;
-  margin: auto;
-  margin-bottom: 80px;
+  width: 100%;
+  z-index: -1;
+  margin-top: -5%;
 }
 .LoginForm{
   background-color: #F2E9E0;
   width: 100%;
   text-align: center;
-  align-items: center;
-  justify-content: center;
+  z-index: 1;
+  margin-top: 0%;
+  position: absolute;
+  clip-path: polygon(0% 48%, 250% 10%, 100% 100%, 0% 100%);
+  height: 100%;
+}
+.BQtitle {
+  display: none;
 }
 .logoBQ{
-  width: 100px;
-  margin-top: 70px;
+  display: none;
 }
-
 .inputLogin{
-  width: 350px;
-  height: 40px;
+  width: 250px;
+  height: 32px;
   color: black;
   font-weight: bolder;
   border-radius: 30px;
-  margin: 10px;
+  margin: 5px;
   background-color: white;
   border: none;
   display: block;
@@ -46,27 +45,228 @@ display: flex;
   margin-top: 5px;
   text-align: center;
   font-size: 18px;
-  outline-color:#ffdb25;
+  outline-color: #fa951a;
+  box-shadow: inset 2px 2px 5px rgb(128, 128, 128);
 }
 .pLogin{
   color: black;
+  margin-top: 70%;
+}
+.LoginContainer p{
+  font-size: 15px;
 }
 .buttonLogin{
-  background-color:#ffdb25;
+  background-color:#fa951a;
   border-radius: 30px;
   margin: 10px;
-  width: 350px;
-  height: 40px;
+  width: 270px;
+  height: 35px;
   border: 1px;
   font-weight: bold;
-  font-size: 20px;
-  margin-top: 40px;
+  font-size: 18px;
+  margin-top: 15px;
+  box-shadow: 2px 2px 5px rgb(128, 128, 128);
 }
-@media (max-width: 800px) {
-
 }
 
+@media (min-width: 351px) and (max-width: 801px){
 
-@media (max-width: 428px) {
+  .LoginContainer {
+    margin: 0;
+    display: flex;  
+  }
+  .backgroundImg{
+    width: 100%;
+    z-index: -1;
+    margin-top: -5%;
+  }
+  .LoginForm{
+    background-color: #F2E9E0;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    margin-top: 0%;
+    position: absolute;
+    clip-path: polygon(0% 40%, 250% 10%, 100% 100%, 0% 100%);
+    height: 100%;
+  }
+  .BQtitle {
+    display: none;
+  }
+  .logoBQ{
+    margin-top: 80%;
+    width: 75px;
+  }
+  .inputLogin{
+    width: 280px;
+    height: 35px;
+    color: black;
+    font-weight: bolder;
+    border-radius: 30px;
+    margin: 5px;
+    background-color: white;
+    border: none;
+    display: block;
+    margin:auto;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    text-align: center;
+    font-size: 18px;
+    outline-color: #fa951a;
+    box-shadow: inset 2px 2px 5px rgb(128, 128, 128);
+  }
+  .pLogin{
+    color: black;
+    margin-top: 5%;
+  }
+  .LoginContainer p{
+    font-size: 18px;
+  }
+  .buttonLogin{
+    background-color:#fa951a;
+    border-radius: 30px;
+    margin: 10px;
+    width: 300px;
+    height: 38px;
+    border: 1px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 6%;
+    box-shadow: 2px 2px 5px rgb(128, 128, 128);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .LoginContainer {
+    margin: 0;
+    display: flex;  
+  }
+  .backgroundImg{
+    width: 100%;
+    z-index: -1;
+    margin-top: -5%;
+  }
+  .LoginForm{
+    background-color: #F2E9E0;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+    margin-top: 0%;
+    position: absolute;
+    clip-path: polygon(0% 50%, 250% 10%, 100% 100%, 0% 100%);
+    height: 100%;
+  }
+  .BQtitle {
+    display: none;
+  }
+  .logoBQ{
+    margin-top: 63%;
+    width: 100px;
+  }
+  .inputLogin{
+    width: 450px;
+    height: 55px;
+    color: black;
+    font-weight: bolder;
+    border-radius: 30px;
+    margin: 5px;
+    background-color: white;
+    border: none;
+    display: block;
+    margin:auto;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    text-align: center;
+    font-size: 18px;
+    outline-color: #fa951a;
+    box-shadow: inset 2px 2px 5px rgb(128, 128, 128);
+  }
+  .pLogin{
+    color: black;
+    margin-top: 5%;
+  }
+  .LoginContainer p{
+    font-size: 28px;
+  }
+  .buttonLogin{
+    background-color:#fa951a;
+    border-radius: 30px;
+    margin: 10px;
+    width: 500px;
+    height: 60px;
+    border: 1px;
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: 6%;
+    box-shadow: 2px 2px 5px rgb(128, 128, 128);
+  }
+}
+
+@media (min-width: 1024px) {
+
+  
+.LoginContainer {
+  margin: 0;
+  display: flex;
+  }
+  .backgroundImg{
+    
+    height: 100vh;
+  }
+  .BQtitle {
+    width: 300px;
+    align-items: center;
+    display: block;
+    margin: auto;
+    margin-bottom: 80px;
+  }
+  .LoginForm{
+    background-color: #F2E9E0;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .logoBQ{
+    width: 100px;
+    margin-top: 70px;
+  }
+  
+  .inputLogin{
+    width: 350px;
+    height: 40px;
+    color: black;
+    font-weight: bolder;
+    border-radius: 30px;
+    margin: 10px;
+    background-color: white;
+    border: none;
+    display: block;
+    margin:auto;
+    margin-bottom: 15px;
+    margin-top: 5px;
+    text-align: center;
+    font-size: 18px;
+    outline-color: #fa951a;
+    box-shadow: inset 2px 2px 5px rgb(128, 128, 128);
+  }
+  .pLogin{
+    color: black;
+  }
+  .buttonLogin{
+    background-color:#fa951a;
+    border-radius: 30px;
+    margin: 10px;
+    width: 350px;
+    height: 40px;
+    border: 1px;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 40px;
+    box-shadow: 2px 2px 5px rgb(128, 128, 128);
+  }
+  
+
 
 }
