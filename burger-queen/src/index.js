@@ -3,12 +3,11 @@ import ReactDOM from 'react-dom/client';
 import Login from './Pages/Login';
 import reportWebVitals from './reportWebVitals';
 import AdminPage from './Pages/Admin';
-import WaiterPage from './Pages/Waiter';
+import WaiterPage from './Pages/Waiter/WaiterMainPage';
 
 
 import {
    BrowserRouter,
-   //RouterProvider,
    Route,
    Routes,
 } from "react-router-dom";
