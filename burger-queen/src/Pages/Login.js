@@ -54,7 +54,11 @@ export function Login() {
 
         }
       })
-      .catch(error => console.log(error))
+      .catch(error => 
+        window.confirm("El usuario y/o la contraseña son incorrectos")
+      
+      
+      )
   }
   return (
 

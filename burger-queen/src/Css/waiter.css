@@ -196,3 +196,13 @@ footer {
     text-align: center;
     padding-top: 10px;
 }
+.addProduct{
+    position: absolute;
+    width: 220px;
+    height: 45px;
+    background-color: #fa951a;
+    border-radius: 20px;
+    border: none;
+    font-size: 20px;
+    box-shadow: 2px 2px 5px rgb(128, 128, 128);
+}

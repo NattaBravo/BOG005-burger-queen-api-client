@@ -1,35 +1,32 @@
-//import { useState } from "react";
-//import { useExpandProps } from './WaiterContext';
-//import ArticleProduct from './ArticleProduct';
+import { useExpandProps } from "./WaiterContext";
+
 
 function ShowProductList () {
 
+    const {typeMenu, setTypeMenu} = useExpandProps();
+
     const handleTypeMenu = (e) => {
-        const typeMenu = e.target.value;
-        return typeMenu;
-       /* const newData = data.filter(function(product) {
-            console.log("Miercoles", newData);
-            return(product.type).includes(typeMenu);
-        });
-        console.log("Toma tu array", newData);
-        return newData;*/
+        setTypeMenu(e.target.value);
+        console.log(typeMenu)
+        return setTypeMenu;
     };
     
-
     return (
         <>
             <nav>
                 <button
                     alt=""
+                    typemenu={typeMenu}
                     className='breakfastButton'
-                    value="Desayunos"
+                    value="Desayuno"
                     onClick={handleTypeMenu}>
                     Desayunos
                 </button>
                 <button
                     alt=""
+                    typemenu={typeMenu}
                     className='lunchButton'
-                    value="Almuerzos"
+                    value="Almuerzo"
                     onClick={handleTypeMenu}>
                     Almuerzos
                 </button>
