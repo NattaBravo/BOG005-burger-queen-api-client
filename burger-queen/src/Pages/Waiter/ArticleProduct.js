@@ -1,33 +1,34 @@
 import { useExpandProps } from './WaiterContext';
-//import { useState } from 'react';
-import { ShowProductList } from './ProductList';
+import deleteIcon from '../../Resources/delete.png';
+import editIcon from '../../Resources/edit.png'
+
 
 const ArticleProduct = () => {
     let data = useExpandProps();
-    data = data.productItem;
+    data = data.data;
 
-    <ShowProductList />
+    console.log(data, typeof(data));
 
+    const {
+        setOpenModal,
+        title,
+        setTitle,
+        idProduct, 
+        setIdProduct,
+        DeleteRequest
+    } = useExpandProps();
 
-    /*const [prodsFiltered, setProdsFiltered] = useState(data);
+    const editFunction = (element) => {
+        setTitle("Editar")
+        setOpenModal(true)
+        setIdProduct(element.id);
+    }
 
-    const handleTypeMenu = (e) => {
-        setTypeMenu(e.target.value);
-        const newData = data.filter((product)=>{
-            let leakedData = (product.type.includes(typeMenu));
-            return leakedData;
-        });
-        console.log("Toma tu array", newData);
-        return newData;
-    };
-    */
-
-
-
-
-    console.log(data);
-
-
+    const deleteFunction = (element) => {
+        alert("¿Estas seguro que deseas eliminar este producto?");
+        setIdProduct(element.id);
+        DeleteRequest(element.id)
+    }
 
     return (
         <>
@@ -36,10 +37,17 @@ const ArticleProduct = () => {
                     <img alt="" src={element.image} className="imageXproduct"></img>
                     <p className="infoProduct">{element.name}</p>
                     <p className="infoProduct"></p>
+                    <button 
+                    className="takeIt"
+                    >+</button>
                     <p className="infoProduct">{element.price}</p>
-                    <button className="takeIt">+</button>
-                </article>))}
-
+                    <button className='buttonCRUDStyle' onClick={() => editFunction(element)} title={title} idProduct={idProduct}>
+                        <img src={editIcon} className="iconCRUD" alt=""></img>
+                    </button>
+                    <button className='buttonCRUDStyle' onClick={() => deleteFunction(element)} idProduct={idProduct}>
+                            <img src={deleteIcon} className="iconCRUD" alt=""></img>
+                    </button>
+            </article>))}
         </>
 
     )
