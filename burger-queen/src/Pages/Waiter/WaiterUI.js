@@ -15,6 +15,8 @@ function WaiterUI() {
         setTypeMenu,
         openModal,
         setOpenModal,
+        title,
+        setTitle
       } = useExpandProps()
 
     return (
@@ -54,15 +56,15 @@ function WaiterUI() {
             <h1 className='titlesXGrid'>Valor Unitario</h1>
           </article>
 
-          <article>
-            <article>
+          <article className='listOfArticleProducts'>
               <ArticleProduct />
-            </article>
           </article>
 
       {!!openModal && (
         <Modal>
-          <FormWaiterModal />
+          <FormWaiterModal 
+          title={title}
+          setTitle={setTitle}/>
         </Modal>
       )}
           <AddProducts

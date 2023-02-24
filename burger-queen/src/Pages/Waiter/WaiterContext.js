@@ -1,6 +1,7 @@
 import { React, useEffect, useState, createContext, useContext } from "react";
-import { GetProducts } from "../Requests";
+import { GetProducts, PostProducts, EditProducts, DeleteProducts } from "../Requests";
 import { ShowProductList } from "./ProductList";
+
 
 
 const WaiterContext = createContext();
@@ -12,6 +13,10 @@ const WaiterProvider = ({ children }) => {
   const [typeMenu, setTypeMenu] = useState("");
 
   const [openModal, setOpenModal] = useState(false);
+
+  const [title, setTitle] = useState("")
+
+  const [idProduct, setIdProduct] = useState("")
 
   useEffect(() => {
     GetProducts()
@@ -38,6 +43,38 @@ const WaiterProvider = ({ children }) => {
     data = filteredProducts;
   }
 
+  const AddRequest = (infoData) => {
+    PostProducts(infoData)
+      .then(res => {
+        setProductItem(data.concat(res.data));
+        GetProducts()
+      })
+      .catch(error => console.log(error))
+  }
+
+  const EditRequest = (infoData, idProduct) => {
+    //console.log(infoData, "momentico");
+    //console.log(idProduct, "momentico")
+    EditProducts(infoData, idProduct)
+      .then(res => {
+        setProductItem(data.map(element =>
+          element.id === res.data.id ? res.data : element
+        ))
+      })
+      .catch(error => console.log(error))
+  }
+
+  const DeleteRequest = (idProduct) => {
+    console.log(idProduct, "momentico")
+    DeleteProducts(idProduct)
+      .then(res => {
+        setProductItem(data.splice(res)
+        )
+      })
+      .catch(error => console.log(error))
+  }
+
+
   return (
     <WaiterContext.Provider
       value={{
@@ -46,6 +83,13 @@ const WaiterProvider = ({ children }) => {
         setTypeMenu,
         openModal,
         setOpenModal,
+        AddRequest,
+        EditRequest,
+        title,
+        setTitle,
+        idProduct,
+        setIdProduct,
+        DeleteRequest
       }}
     >
       {children}

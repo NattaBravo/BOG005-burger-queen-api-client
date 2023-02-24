@@ -1,4 +1,6 @@
 import { useExpandProps } from './WaiterContext';
+import deleteIcon from '../../Resources/delete.png';
+import editIcon from '../../Resources/edit.png'
 
 
 const ArticleProduct = () => {
@@ -7,6 +9,27 @@ const ArticleProduct = () => {
 
     console.log(data, typeof(data));
 
+    const {
+        setOpenModal,
+        title,
+        setTitle,
+        idProduct, 
+        setIdProduct,
+        DeleteRequest
+    } = useExpandProps();
+
+    const editFunction = (element) => {
+        setTitle("Editar")
+        setOpenModal(true)
+        setIdProduct(element.id);
+    }
+
+    const deleteFunction = (element) => {
+        alert("¿Estas seguro que deseas eliminar este producto?");
+        setIdProduct(element.id);
+        DeleteRequest(element.id)
+    }
+
     return (
         <>
             {data.map(element => (
@@ -14,8 +37,16 @@ const ArticleProduct = () => {
                     <img alt="" src={element.image} className="imageXproduct"></img>
                     <p className="infoProduct">{element.name}</p>
                     <p className="infoProduct"></p>
+                    <button 
+                    className="takeIt"
+                    >+</button>
                     <p className="infoProduct">{element.price}</p>
-                    <button className="takeIt">+</button>
+                    <button className='buttonCRUDStyle' onClick={() => editFunction(element)} title={title} idProduct={idProduct}>
+                        <img src={editIcon} className="iconCRUD" alt=""></img>
+                    </button>
+                    <button className='buttonCRUDStyle' onClick={() => deleteFunction(element)} idProduct={idProduct}>
+                            <img src={deleteIcon} className="iconCRUD" alt=""></img>
+                    </button>
             </article>))}
         </>
 
