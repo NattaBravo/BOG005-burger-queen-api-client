@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Login from './Pages/Login';
+import Login from './Pages/Login/Login';
 import reportWebVitals from './reportWebVitals';
-import AdminPage from './Pages/Admin';
 import WaiterPage from './Pages/Waiter/WaiterMainPage';
+import AdministratorPage from './Pages/Admin/AdminMainPage';
 
 
 import {
@@ -19,8 +19,8 @@ root.render(
    <BrowserRouter>
       <Routes>
          <Route path="/" element={<Login />}/>
-         <Route path="/admin" element={<AdminPage />}/>
          <Route path="/waiter" element={<WaiterPage />}/>
+         <Route path="/admin" element={<AdministratorPage />}/>
 
       </Routes>
    </BrowserRouter>

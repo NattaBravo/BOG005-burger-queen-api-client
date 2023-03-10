@@ -1,12 +1,12 @@
 import { React, useEffect, useState, createContext, useContext } from "react";
 import { GetProducts, PostProducts, EditProducts, DeleteProducts } from "../Requests";
-//import { ShowProductList } from "./ProductList";
+import { ShowProductList } from "./ProductList";
 
 
 
-const WaiterContext = createContext();
+const AdminContext = createContext();
 
-const WaiterProvider = ({ children }) => {
+const AdminProvider = ({ children }) => {
 
   const [productItem, setProductItem] = useState([]);
 
@@ -76,7 +76,7 @@ const WaiterProvider = ({ children }) => {
 
 
   return (
-    <WaiterContext.Provider
+    <AdminContext.Provider
       value={{
         data,
         typeMenu,
@@ -93,11 +93,12 @@ const WaiterProvider = ({ children }) => {
       }}
     >
       {children}
-    </WaiterContext.Provider>)
+      <ShowProductList />
+    </AdminContext.Provider>)
 }
 
 const useExpandProps = () => (
-  useContext(WaiterContext)
+  useContext(AdminContext)
 );
 
-export { WaiterProvider, useExpandProps, WaiterContext };
+export { AdminProvider, useExpandProps, AdminContext };

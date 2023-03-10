@@ -1,225 +1,25 @@
-@media (max-width: 800px) {}
-
-.backgroundWaiter {
-    display: flex;
-    background-color: #F2E9E0;
-    height: 100vh;
+* {
+    font-family: 'Darker Grotesque', sans-serif;
+   
 }
-.backWaiter {
-    width: 300vh;
-    position: fixed;
+.mainLogo{
+    width: 48px;
 }
-header {
-    background-image: url("../Resources/background.png");
+.optionForProduct{
     width: 100%;
-    height: 70px;
-    position: absolute;
-}
-.logoBQWaiter {
-    width: 60px;
-    position: relative;
-    margin-left: 48%;
-}
-.iconUser {
-    width: 40px;
-    position: relative;
-    margin-left: 35%;
-}
-.exitIcon {
-    width: 40px;
-    margin-left: 20px;
-}
-.selectTable {
-    position: absolute;
-    z-index: 3;
-    top: 100px;
-    margin-left:70rem;
-    background-color: #fa951a;
-    border-radius: 15px;
-    height: 45px;
-    width: 140px;
-    text-align: center;
-    border: none;
-    box-shadow: 2px 2px 5px rgb(128, 128, 128);
-    font-size: 20px;
-}
-.breakfastButton{
-    position: absolute;
-    top: 100px;
-    width: 160px;
-    height: 50px;
-    margin-left: 50px;
-    background-color: #fa951a;
-    border-radius: 20px 20px 0px 0px;
-    border: none;
-    font-weight: italic;
-    font-size: 20px;
-}
-.lunchButton{
-    position: absolute;
-    top: 100px;
-    width: 160px;
-    height: 50px;
-    margin-left: 220px;
-    background-color: #fa951a;
-    border-radius: 20px 20px 0px 0px;
-    border: none;
-    font-weight: italic;
-    font-size: 20px;
-}
-.totalOrdersButton{
-    position: absolute;
-    top: 100px;
-    width: 220px;
-    height: 45px;
-    margin-left: 80rem;
-    background-color: #fa951a;
-    border-radius: 20px;
-    border: none;
-    font-weight: italic;
-    font-size: 20px;
-    box-shadow: 2px 2px 5px rgb(128, 128, 128);
-}
-.orders {
-    background-color: white;
-    width: 42%;
-    height: 480px;
-    z-index: 2;
-    margin-top: 180px;
-    margin-left: 60px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 3px -3px 10px gray;
-}
-.title{
-    margin: 15px;
-}
-.orderGrid{
-    display: inline-flex;
-    justify-content:space-around;
-    margin-top: 5px;
-}
-.titlesXGrid{
-    margin-left: 60px;
-}
-.orderOverview {
-    background-color: white;
-    width: 48%;
-    height: 480px;
-    display: absolute;
-    z-index: 2;
-    margin-top: 180px;
-    margin-left: 40px;
-    border-radius: 10px;
-    box-shadow: 3px -3px 10px gray;
-    text-align: center;
-    padding-bottom: 8px;
-}
-.orderOverviewGrid{
-    display: inline-flex;
-    justify-content:space-around;
-    margin-top: 5px;
-}
-.product{
-    background-color: white;
-    height: 70px;
-    display: flex;
-    margin: 20px 30px;
-    border-radius: 10px;
-    box-shadow: inset 2px 2px 5px rgb(128, 128, 128);
-    cursor: pointer;
-
-}
-.imageXproduct{
-    display: block;
-    margin: 10px;
-    
-}
-.infoProduct{
-    margin: auto;
-    align-items: center;
-    justify-content: center;
-}
-.takeIt{
-    background-color: #f7bc75;
-    width: 25px;
-    height: 25px;
-    border: none;
-    border-radius: 50%;
-    align-self: center;
-}
-.FinalOrder{
-    background-color: white;
-    height:40px;
-    display: block;
-    margin: 20px 30px;
-    border-radius:10px;
-}
-.FullValue{
-    background-color: #F2E9E0;
-    width: 85%;
-    height:70px;
-    margin: auto;
-    border-radius:10px;
-    border: black;
-    box-shadow: inset 2px 2px 5px rgb(128, 128, 128);
-}
-.sendOrder{
-    position: absolute;
-    width: 220px;
-    height: 45px;
-    background-color: #fa951a;
-    border-radius: 20px;
-    border: none;
-    font-size: 20px;
-    box-shadow: 2px 2px 5px rgb(128, 128, 128);
-    margin-left: 4%;
-    margin-top: 12px;
-}
-.sendOrderTitle{
-    display:flex;
-    position: absolute;
-    font-size: 25px;
-    margin-top: 20px;
-    margin-left: 2%;
-
-}
-footer {
-    bottom: 0;
-    color: beige;
-    background-image: url("../Resources/background.png");
-    position: absolute;
-    z-index: 2;
-    width: 100%;
-    height: 30px;
-    text-align: center;
-    padding-top: 10px;
-}
-.addProduct{
-    position: absolute;
-    width: 220px;
-    height: 45px;
-    background-color: #fa951a;
-    border-radius: 20px;
-    border: none;
-    font-size: 20px;
-    box-shadow: 2px 2px 5px rgb(128, 128, 128);
-    margin-top: 10px;
-    margin-left: 80px;
-}
-.iconCRUD{
-    width: 25px;
     margin: 0;
-    
+    padding: 0;
+    display: grid;
+   
 }
-.buttonCRUDStyle{
-    background-color: white;
-    border: none;
-    margin-right: 10px;
-    height: 30px;
-    align-self: center;
+.imageForProduct{
+    width: 200px;
+    height: auto;
+    grid-row: auto;
+
 }
-.listOfArticleProducts{
-    overflow-y: scroll;
-    height: 320px;
+.buttonForProduct{
+    width: 50%;
+    background-color: aqua;
+
 }

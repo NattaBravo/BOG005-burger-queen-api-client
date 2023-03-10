@@ -15,22 +15,112 @@
     text-align: center;
     border-radius: 10px;
     box-shadow: 3px -3px 10px rgb(40, 40, 40);
-    width: 60%;
+    width: 80%;
 }
 .modalHeader{
     background-color: #fa951a;
     border-radius: 10px 10px 0px 0px;
+    height: 35px;
+    padding-top: 15px;
+
+}
+.modalButtons{
+    background-color: #fa951a;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    display:inline;
+    cursor: pointer;
+    width: 100px;
+    margin: 20px 10px 10px 10px;
+    height: 30px;
+}
+form input{
+    border-radius: 30px;
+    width: 80%;
+    outline-color: #fa951a;
+    box-shadow: inset 2px 2px 5px rgb(128, 128, 128);
+    text-align: center;
+    border: none;
+    height: 35px;
+}
+.closeButton{
+    background:none;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    font-size: 24px;
+    left: 45%;
+    top: -35px;
+}
+.formModal{
+    padding: 40px 0px 20px 0px;
+}
+.selectType{
+    border-radius: 15px;
+    height: 35px;
+    width: 175px;
+    text-align: center;
+    border: none;
+    box-shadow: 2px 2px 5px rgb(128, 128, 128);
+    font-size: 20px;
+    display: inline;
+    cursor: pointer;
+}
+.formModal h2{
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+@media (min-width: 0px) and (max-width: 350px) {
+   
+}
+
+
+@media (min-width: 351px) and (max-width: 500px){
+    form {
+        padding: 0px;
+    }
+
+}
+
+@media (min-width: 500px) and (max-width: 1023px) {
+    .modalWindow{
+        width: 65%;
+    }
+    .modalHeader{
+        height: 35px;
+        padding-top: 20px;
+    }
+    form input{
+    font-size: 20px;  
+    }
+    .modalButtons{
+        width: 150px;
+        height: 40px;
+        margin: 40px 10px 30px 10px;
+        font-size: 18px;
+    }
+    .closeButton{
+        left: 45%;
+        top: -40px;
+    }
+    
+}
+
+@media (min-width: 1024px) {
+    .modalWindow{
+        width: 60%;
+    }
+.modalHeader{
     height: 40px;
     padding-top: 20px;
 }
 .modalButtons{
-    background-color: #fa951a;
     width: 200px;
     height: 40px;
-    border: none;
-    border-radius: 10px;
-    margin: 10px;
-    font-size: 18px;
+    font-size: 20px;
+    margin: 40px 30px 30px 30px;
 }
 form h4{
     margin-top: 15px;
@@ -39,22 +129,18 @@ form h4{
 }
 form input{
     border-radius: 30px;
-    width: 70%;
+    width: 57%;
     outline-color: #fa951a;
     box-shadow: inset 2px 2px 5px rgb(128, 128, 128);
     text-align: center;
     border: none;
-    height: 35px;  
+    height: 35px;
+    font-size: 22px;  
 }
 .selectType{
-    border-radius: 15px;
     height: 35px;
-    width: 140px;
-    text-align: center;
-    border: none;
-    box-shadow: 2px 2px 5px rgb(128, 128, 128);
-    font-size: 15px;
-    display: inline-block;
+    width: 175px;
+    font-size: 20px;
 }
 .selectSection{
     margin-bottom: 10px;
@@ -64,6 +150,13 @@ form input{
     display: inline-block;
     margin-right: 15px;
 }
-form{
-    padding: 40px 0px 20px 0px;
+option{
+    margin: auto;
+}
+.closeButton{
+    font-size: 28px;
+    top: -42px;
+    left: 46%;
+
+}
 }
