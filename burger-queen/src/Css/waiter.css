@@ -2,24 +2,145 @@
     font-family: 'Darker Grotesque', sans-serif;
    
 }
+.mainHeader{
+    display: grid;
+}
+.waiterBody{
+    margin: 0;
+    background-color: #F2E9E0;
+    height: 100%;
+}
+.wellcome{
+    padding: 20px 16px 0px 16px;
+    text-align: right;
+
+}
+
+h1{
+    font-size: 28px;
+    font-weight:900;
+}
+h2{
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 22px;
+    margin-left: 16px;
+}
+h3{
+    font-size: 16px;
+    font-weight: 600;
+
+}
+p{
+    font-weight: 400;
+    font-size: 20px;
+}
 .mainLogo{
     width: 48px;
+    align-self: center;
 }
-.optionForProduct{
+.breakfast{
+    display: flex;
     width: 100%;
-    margin: 0;
-    padding: 0;
-    display: grid;
-   
+    height: 195px;
+    cursor: pointer;
 }
-.imageForProduct{
-    width: 200px;
-    height: auto;
-    grid-row: auto;
-
-}
-.buttonForProduct{
+.breakfastTitle{
+    background-color: white;
     width: 50%;
-    background-color: aqua;
+    height: 100%;
+}
+.breakfastPTitle1{
+    font-size: 50px;
+    text-align: center;
+    position: relative;
+    font-weight: 200;
+    top: 20%;
+}
+.breakfastPTitle2{
+    font-size: 50px;
+    text-align: center;
+    position: relative;
+    font-weight: 200;
+    top: 10px;
+}
+.breakfastImage{
+    background: url("C:\Users\PROFESSIONAL\Documents\Javascript\Burger-queen\BOG005-burger-queen-api-client\burger-queen\src\Resources\breakfastWall.jpg");
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+}
+.lunch{
+    z-index: 1;
+    display: flex;
+    width: 100%;
+    height: 195px;
+    cursor: pointer;
+}
+.lunchImage{
+    background: url("C:\Users\PROFESSIONAL\Documents\Javascript\Burger-queen\BOG005-burger-queen-api-client\burger-queen\src\Resources\lunchWall.jpg");
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+}
+.lunchTitle{
+    background-color: white;
+    width: 50%;
+    height: 100%;
+}
+.lunchPTitle1{
+    font-size: 50px;
+    text-align: center;
+    position: relative;
+    font-weight: 200;
+    top: 8%;
+}
+.lunchPTitle2{ 
+    font-size: 50px;
+    text-align: center;
+    position: relative;
+    font-weight: 200;
+    top: -10px;
+}
+.lunchPTitle3{ 
+    font-size: 50px;
+    text-align: center;
+    position: relative;
+    font-weight: 200;
+    top: -35px;
 
+}
+.tableState{
+    background: url("C:\Users\PROFESSIONAL\Documents\Javascript\Burger-queen\BOG005-burger-queen-api-client\burger-queen\src\Resources\waiterWall.jpg");
+    background-size: cover;
+    height: 250px;  
+    display: grid;
+}
+.tableStateTitle{
+    font-weight: 600;
+    width: 100px;
+    text-align: center;
+    left: 70%;
+    position: relative;
+    align-self: center;
+}
+.clickToOrders{
+    background: url("C:\Users\PROFESSIONAL\Documents\Javascript\Burger-queen\BOG005-burger-queen-api-client\burger-queen\src\Resources\orderWall.jpg");
+    background-size: cover;
+    height: 250px;  
+}
+.ordersTitle{
+    left: 25px;
+    position: relative;
+    align-self: center;
+    width: 180px;
+    font-weight: 600;
+    text-align: center;
+    top: 30px;
+    font-size: 25px;
+}
+.mainFooter{
+    position: static;
+    height: 350px;
+    margin-top: 25px;
 }
