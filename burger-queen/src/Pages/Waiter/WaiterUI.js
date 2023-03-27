@@ -1,7 +1,23 @@
-//import breakfast from '../../Resources/Desayuno.jpg'
 import HeaderBQ from "../../Components/header"
+import { useNavigate } from "react-router-dom";
 
 function WaiterUI() {
+
+  const navigate = useNavigate();
+
+  const OrdersLunchPage = "/lunch"
+  const OrdersBreakfastPage = "/breakfast"
+
+  const goToTakingLunchOrder = () => {
+    navigate(OrdersLunchPage)
+  }
+
+  const goToTakingBreakfastOrder = () => {
+    navigate(OrdersBreakfastPage)
+  }
+
+
+
 
   return (
     <>
@@ -23,7 +39,7 @@ function WaiterUI() {
         </section>
 
         <h2>PRODUCTOS</h2>
-        <article className="breakfast">
+        <article className="breakfast" onClick={goToTakingBreakfastOrder}>
           <div className="breakfastImage"></div>
           <div className="breakfastTitle">
             <p className="breakfastPTitle1">DESA</p>
@@ -31,7 +47,7 @@ function WaiterUI() {
             
           </div>
         </article>
-        <article className="lunch">
+        <article className="lunch" onClick={goToTakingLunchOrder}>
           <div className="lunchTitle">
           <p className="lunchPTitle1">AL</p>
             <p className="lunchPTitle2">MUER</p>

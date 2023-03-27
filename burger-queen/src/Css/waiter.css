@@ -117,7 +117,7 @@ p{
     display: grid;
 }
 .tableStateTitle{
-    font-weight: 600;
+    font-weight: 400;
     width: 100px;
     text-align: center;
     left: 70%;
@@ -134,7 +134,7 @@ p{
     position: relative;
     align-self: center;
     width: 180px;
-    font-weight: 600;
+    font-weight: 400;
     text-align: center;
     top: 30px;
     font-size: 25px;
