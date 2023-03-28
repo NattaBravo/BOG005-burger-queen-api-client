@@ -141,6 +141,47 @@ p{
 }
 .mainFooter{
     position: static;
-    height: 350px;
+    height: 490px;
     margin-top: 25px;
+    color: beige;
+    background-image: url("../Resources/backgroundForFooter.png");
+    background-size: cover;
+    width: 100%;
+    padding-top: 10px;
+}
+.mainFooter h2{
+    text-align: left;
+    margin-left: 7%;
+}
+.gridForExploreSection{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 20px;
+    margin: 20px 40px;
+}
+.spanForFooter{
+    width: 340px;
+    height: 3px;
+    background-color:#F2E9E0;
+    display: grid;
+    margin: auto;
+    
+}
+.contactSection{
+    text-align: left;
+    line-height: 20px;
+    margin: 20px 30px 20px 40px;
+}
+.socialSection img {
+    width: 30px;
+    margin: 20px 30px;
+}
+.socialSection{
+    display:flex;
+    align-items: center;
+}
+.madeBy{
+    font-style: oblique;
+    text-align: center;
+    margin: 15px 30px 30px 30px;
 }

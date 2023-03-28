@@ -1,6 +1,5 @@
 import { React, useEffect, useState, createContext, useContext } from "react";
 import { GetProducts, PostProducts, EditProducts, DeleteProducts } from "../Requests";
-//import { ShowProductList } from "./ProductList";
 
 
 
@@ -10,7 +9,7 @@ const WaiterProvider = ({ children }) => {
 
   const [productItem, setProductItem] = useState([]);
 
-  const [typeMenu, setTypeMenu] = useState("");
+  const [typeMenuWaiter, setTypeMenuWaiter] = useState("");
 
   const [openModal, setOpenModal] = useState(false);
 
@@ -22,6 +21,7 @@ const WaiterProvider = ({ children }) => {
     GetProducts()
       .then((res) => {
         const allProducts = res.data;
+        console.log(allProducts)
         allProducts.forEach(element => {
           element.counter = 0;
         });
@@ -30,7 +30,7 @@ const WaiterProvider = ({ children }) => {
       .catch(error => error);
   }, []);
 
-  let data;
+ /* let data;
   if (typeMenu.length === 0) {
     let prep = { productItem };
     data = prep.productItem;
@@ -41,63 +41,29 @@ const WaiterProvider = ({ children }) => {
       return typeForEachProduct.includes(typeMenu)
     })
     data = filteredProducts;
-  }
-
-  const AddRequest = (infoData) => {
-    PostProducts(infoData)
-      .then(res => {
-        setProductItem(data.concat(res.data));
-        GetProducts()
-      })
-      .catch(error => console.log(error))
-  }
-
-  const EditRequest = (infoData, idProduct) => {
-    //console.log(infoData, "momentico");
-    //console.log(idProduct, "momentico")
-    EditProducts(infoData, idProduct)
-      .then(res => {
-        setProductItem(data.map(element =>
-          element.id === res.data.id ? res.data : element
-        ))
-      })
-      .catch(error => console.log(error))
-  }
-
-  const DeleteRequest = (idProduct) => {
-    console.log(idProduct, "momentico")
-    DeleteProducts(idProduct)
-      .then(res => {
-        setProductItem(data.splice(res)
-        )
-      })
-      .catch(error => console.log(error))
-  }
+  }*/
 
 
   return (
     <WaiterContext.Provider
       value={{
-        data,
-        typeMenu,
-        setTypeMenu,
+        //data,
+        typeMenuWaiter,
+        setTypeMenuWaiter,
         openModal,
         setOpenModal,
-        AddRequest,
-        EditRequest,
         title,
         setTitle,
         idProduct,
         setIdProduct,
-        DeleteRequest
       }}
     >
       {children}
     </WaiterContext.Provider>)
 }
 
-const useExpandProps = () => (
+const usePropsFromWaiter = () => (
   useContext(WaiterContext)
 );
 
-export { WaiterProvider, useExpandProps, WaiterContext };
+export { WaiterProvider, usePropsFromWaiter, WaiterContext };

@@ -1,0 +1,5 @@
+const CardsForProducts = () => {
+
+}
+
+export { CardsForProducts }
