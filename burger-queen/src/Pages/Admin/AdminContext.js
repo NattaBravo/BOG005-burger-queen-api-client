@@ -1,6 +1,6 @@
 import { React, useEffect, useState, createContext, useContext } from "react";
 import { GetProducts, PostProducts, EditProducts, DeleteProducts } from "../Requests";
-import { ShowProductList } from "./ProductList";
+
 
 
 
@@ -11,6 +11,8 @@ const AdminProvider = ({ children }) => {
   const [productItem, setProductItem] = useState([]);
 
   const [typeMenu, setTypeMenu] = useState("");
+
+  console.log(typeMenu);
 
   const [openModal, setOpenModal] = useState(false);
 
@@ -93,7 +95,7 @@ const AdminProvider = ({ children }) => {
       }}
     >
       {children}
-      <ShowProductList />
+      
     </AdminContext.Provider>)
 }
 

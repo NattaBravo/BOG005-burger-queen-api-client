@@ -10,6 +10,8 @@ function ShowProductList () {
         console.log(typeMenu)
         return setTypeMenu;
     };
+
+    console.log(typeMenu);
     
     return (
         <>

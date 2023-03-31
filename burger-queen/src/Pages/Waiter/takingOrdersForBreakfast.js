@@ -4,12 +4,11 @@ import FooterBQ from "../../Components/footer";
 
 
 const TakingOrdersBreakfastPage = ()  => {
-  
 
-  const functionToGetProducts = () => {
+  /*const functionToGetProducts = () => {
     
   }
-  
+  */
   
   
   return (

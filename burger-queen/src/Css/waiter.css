@@ -35,6 +35,9 @@ p{
     font-weight: 400;
     font-size: 20px;
 }
+button{
+    border: none;
+}
 .mainLogo{
     width: 48px;
     align-self: center;
@@ -46,23 +49,12 @@ p{
     cursor: pointer;
 }
 .breakfastTitle{
-    background-color: white;
+    background-image: url("C:\Users\PROFESSIONAL\Documents\Javascript\Burger-queen\BOG005-burger-queen-api-client\burger-queen\src\Resources\titleBreakfast.PNG");
+    background-size: cover;
     width: 50%;
     height: 100%;
-}
-.breakfastPTitle1{
-    font-size: 50px;
-    text-align: center;
-    position: relative;
-    font-weight: 200;
-    top: 20%;
-}
-.breakfastPTitle2{
-    font-size: 50px;
-    text-align: center;
-    position: relative;
-    font-weight: 200;
-    top: 10px;
+    display: grid;
+    
 }
 .breakfastImage{
     background: url("C:\Users\PROFESSIONAL\Documents\Javascript\Burger-queen\BOG005-burger-queen-api-client\burger-queen\src\Resources\breakfastWall.jpg");
@@ -84,31 +76,10 @@ p{
     background-size: cover;
 }
 .lunchTitle{
-    background-color: white;
+    background-image: url("C:\Users\PROFESSIONAL\Documents\Javascript\Burger-queen\BOG005-burger-queen-api-client\burger-queen\src\Resources\titleLunch.PNG");
     width: 50%;
     height: 100%;
-}
-.lunchPTitle1{
-    font-size: 50px;
-    text-align: center;
-    position: relative;
-    font-weight: 200;
-    top: 8%;
-}
-.lunchPTitle2{ 
-    font-size: 50px;
-    text-align: center;
-    position: relative;
-    font-weight: 200;
-    top: -10px;
-}
-.lunchPTitle3{ 
-    font-size: 50px;
-    text-align: center;
-    position: relative;
-    font-weight: 200;
-    top: -35px;
-
+    background-size: cover;
 }
 .tableState{
     background: url("C:\Users\PROFESSIONAL\Documents\Javascript\Burger-queen\BOG005-burger-queen-api-client\burger-queen\src\Resources\waiterWall.jpg");

@@ -115,6 +115,7 @@ export function Login() {
               name='password'
               onChange={passwordController}
               type="password"
+              autoComplete="on"
             ></input>
 
             <button className='buttonLogin' onClick={loginFunction}>LOGIN</button>
