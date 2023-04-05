@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Login from './Pages/Login/Login';
-import reportWebVitals from './reportWebVitals';
 import WaiterPage from './Pages/Waiter/WaiterMainPage';
 import AdministratorPage from './Pages/Admin/AdminMainPage';
 import TakingOrdersLunchPage from './Pages/Waiter/takingOrdersForLunch';
@@ -33,4 +32,4 @@ root.render(
 
 );
 
-reportWebVitals();
+export { root }

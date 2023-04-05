@@ -2,15 +2,18 @@ import HeaderBQ from "../../Components/header"
 import FooterBQ from "../../Components/footer";
 
 
+const TakingOrdersBreakfastPage = (productsByType)  => {
 
-const TakingOrdersBreakfastPage = ()  => {
 
-  /*const functionToGetProducts = () => {
-    
-  }
-  */
+  let data = productsByType.productsByType;
   
+  console.log(data );
+
+  data.map(element => console.log(element))
+ 
+
   
+
   return (
     <>
       <section>

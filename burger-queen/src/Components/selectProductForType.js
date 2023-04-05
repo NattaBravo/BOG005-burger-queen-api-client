@@ -1,6 +1,6 @@
-import { useNavigate } from "react-router-dom";
 import { usePropsFromWaiter } from "../Pages/Waiter/WaiterContext";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const SelectProductForType = () => {
 
@@ -9,8 +9,7 @@ const SelectProductForType = () => {
     const OrdersLunchPage = "/lunch"
     const OrdersBreakfastPage = "/breakfast"
 
-    const {typeMenuWaiter, setTypeMenuWaiter} = usePropsFromWaiter();
-
+    const { typeMenuWaiter, setTypeMenuWaiter} = usePropsFromWaiter();
 
     const goToTakingLunchOrder = (e) => {
         setTypeMenuWaiter(e.target.value);
@@ -22,15 +21,14 @@ const SelectProductForType = () => {
         return setTypeMenuWaiter;
     }
 
-    console.log(typeMenuWaiter)
-
+    
     useEffect(() => {
         if (typeMenuWaiter === "Desayuno") {
             navigate(OrdersBreakfastPage);
         } else if (typeMenuWaiter === "Almuerzo") {
             navigate(OrdersLunchPage);
         }
-    }, [navigate, typeMenuWaiter])
+    })
 
 
     return (
@@ -38,7 +36,6 @@ const SelectProductForType = () => {
             <article
                 className="breakfast"
                 onClick={goToTakingBreakfastOrder}
-                value="Desayuno"
                 typemenuwaiter={typeMenuWaiter}>
                 <button className="breakfastImage" value="Desayuno" typemenuwaiter={typeMenuWaiter} onClick={goToTakingBreakfastOrder}></button>
                 <button className="breakfastTitle" value="Desayuno" typemenuwaiter={typeMenuWaiter} onClick={goToTakingBreakfastOrder}>

@@ -12,7 +12,6 @@ const AdminProvider = ({ children }) => {
 
   const [typeMenu, setTypeMenu] = useState("");
 
-  console.log(typeMenu);
 
   const [openModal, setOpenModal] = useState(false);
 
