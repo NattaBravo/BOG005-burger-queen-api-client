@@ -1,18 +1,20 @@
 import HeaderBQ from "../../Components/header"
 import FooterBQ from "../../Components/footer";
+import { useLocation, useParams } from "react-router-dom";
 
 
-const TakingOrdersBreakfastPage = (productsByType)  => {
+
+const TakingOrdersBreakfastPage = (productsByType) => {
+
+  let params = useParams();
+  let location = useLocation();
 
 
-  let data = productsByType.productsByType;
-  
-  console.log(data );
+  console.log(params, location)
 
-  data.map(element => console.log(element))
- 
 
-  
+
+  console.log("ailobiu")
 
   return (
     <>

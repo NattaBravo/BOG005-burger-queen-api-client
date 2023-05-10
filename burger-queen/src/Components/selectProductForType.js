@@ -1,15 +1,20 @@
-import { usePropsFromWaiter } from "../Pages/Waiter/WaiterContext";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { usePropsFromWaiter } from "../Pages/Waiter/WaiterContext";
+import { useNavigate} from "react-router-dom";
 
 const SelectProductForType = () => {
 
+
+    const { typeMenuWaiter, setTypeMenuWaiter, productsByType } = usePropsFromWaiter();
+
+
+    console.log(productsByType, "desde el main")
+
     const navigate = useNavigate();
 
+    const OrdersBreakfastPage = "/breakfast/:productsByType"
     const OrdersLunchPage = "/lunch"
-    const OrdersBreakfastPage = "/breakfast"
 
-    const { typeMenuWaiter, setTypeMenuWaiter} = usePropsFromWaiter();
 
     const goToTakingLunchOrder = (e) => {
         setTypeMenuWaiter(e.target.value);
@@ -21,15 +26,15 @@ const SelectProductForType = () => {
         return setTypeMenuWaiter;
     }
 
-    
-    useEffect(() => {
-        if (typeMenuWaiter === "Desayuno") {
-            navigate(OrdersBreakfastPage);
-        } else if (typeMenuWaiter === "Almuerzo") {
-            navigate(OrdersLunchPage);
-        }
-    })
 
+    useEffect(() =>{ 
+    
+        typeMenuWaiter === "Desayuno" && navigate(OrdersBreakfastPage);
+        typeMenuWaiter === "Almuerzo" && navigate(OrdersLunchPage);
+
+    }, [typeMenuWaiter, navigate])
+
+    
 
     return (
         <>
@@ -37,7 +42,8 @@ const SelectProductForType = () => {
                 className="breakfast"
                 onClick={goToTakingBreakfastOrder}
                 typemenuwaiter={typeMenuWaiter}>
-                <button className="breakfastImage" value="Desayuno" typemenuwaiter={typeMenuWaiter} onClick={goToTakingBreakfastOrder}></button>
+                <button className="breakfastImage" value="Desayuno" typemenuwaiter={typeMenuWaiter} onClick={goToTakingBreakfastOrder}>
+                </button>
                 <button className="breakfastTitle" value="Desayuno" typemenuwaiter={typeMenuWaiter} onClick={goToTakingBreakfastOrder}>
                 </button>
             </article>

@@ -4,11 +4,13 @@ import { SelectProductForType } from "../../Components/selectProductForType";
 import { usePropsFromWaiter } from "./WaiterContext";
 import TakingOrdersBreakfastPage from "./takingOrdersForBreakfast";
 
+
 function WaiterUI() {
 
   const {
     productsByType,
-    typeMenuWaiter
+    //typeMenuWaiter,
+    //setTypeMenuWaiter
   } = usePropsFromWaiter();
 
   return (
@@ -26,7 +28,10 @@ function WaiterUI() {
         </section>
 
         <h2>PRODUCTOS</h2>
-        <SelectProductForType />
+        <SelectProductForType>
+          <TakingOrdersBreakfastPage
+           productsByType={productsByType}/>
+        </SelectProductForType>
 
         <h2>TABLE STATE</h2>
         <section className="tableState">
@@ -37,10 +42,6 @@ function WaiterUI() {
         <section className="clickToOrders">
           <p className="ordersTitle">Sigue aquí todas las ordenes en tiempo real</p>
         </section>
-
-        {typeMenuWaiter === "Desayuno" &&
-          <TakingOrdersBreakfastPage
-            productsByType={productsByType}/>}
 
         < FooterBQ />
 

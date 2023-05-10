@@ -2,7 +2,6 @@ import { React, useState, useEffect, createContext, useContext } from "react";
 import { GetProducts } from "../Requests";
 
 
-
 const WaiterContext = createContext();
 
 const WaiterProvider = ({ children }) => {
