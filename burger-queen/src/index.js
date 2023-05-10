@@ -7,14 +7,11 @@ import TakingOrdersLunchPage from './Pages/Waiter/takingOrdersForLunch';
 import TakingOrdersBreakfastPage from './Pages/Waiter/takingOrdersForBreakfast';
 
 
-
 import {
    HashRouter,
    Route,
    Routes,
 } from "react-router-dom";
-
-
 
 const root = createRoot(document.getElementById('principalRoot'));
 root.render(
@@ -24,12 +21,10 @@ root.render(
          <Route path="/waiter" element={<WaiterPage />}/>
          <Route path="/admin" element={<AdministratorPage />}/>
          <Route path="/lunch" element={<TakingOrdersLunchPage />}/>
-         <Route path="/breakfast/:productsByType" element={<TakingOrdersBreakfastPage />}/>
-
+         <Route path="/breakfast" element={<TakingOrdersBreakfastPage />}/>
+      
       </Routes>
    </HashRouter>
-
-
 );
 
 export { root }

@@ -1,4 +1,4 @@
-import HeaderBQ from "../../Components/header"
+import { HeaderBQ } from "../../Components/Header"
 import FooterBQ from "../../Components/footer";
 import { SelectProductForType } from "../../Components/selectProductForType";
 import { usePropsFromWaiter } from "./WaiterContext";
@@ -16,7 +16,7 @@ function WaiterUI() {
   return (
     <>
       <section>
-        < HeaderBQ />
+      < HeaderBQ />
       </section>
 
       <section className='waiterBody'>
@@ -34,14 +34,14 @@ function WaiterUI() {
         </SelectProductForType>
 
         <h2>TABLE STATE</h2>
-        <section className="tableState">
+        <button className="tableState">
           <p className="tableStateTitle">Observa el mapa de tus mesas y su estado actual</p>
-        </section>
+        </button>
 
         <h2>ÓRDENES</h2>
-        <section className="clickToOrders">
+        <button className="clickToOrders">
           <p className="ordersTitle">Sigue aquí todas las ordenes en tiempo real</p>
-        </section>
+        </button>
 
         < FooterBQ />
 

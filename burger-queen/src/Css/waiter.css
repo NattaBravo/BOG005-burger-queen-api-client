@@ -86,6 +86,7 @@ button{
     background-size: cover;
     height: 250px;  
     display: grid;
+    width: 100%;
 }
 .tableStateTitle{
     font-weight: 400;
@@ -99,6 +100,7 @@ button{
     background: url("C:\Users\PROFESSIONAL\Documents\Javascript\Burger-queen\BOG005-burger-queen-api-client\burger-queen\src\Resources\orderWall.jpg");
     background-size: cover;
     height: 250px;  
+    width: 100%;
 }
 .ordersTitle{
     left: 25px;

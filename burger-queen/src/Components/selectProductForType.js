@@ -1,6 +1,6 @@
-import { useEffect } from "react";
 import { usePropsFromWaiter } from "../Pages/Waiter/WaiterContext";
-import { useNavigate} from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 const SelectProductForType = () => {
 
@@ -9,12 +9,6 @@ const SelectProductForType = () => {
 
 
     console.log(productsByType, "desde el main")
-
-    const navigate = useNavigate();
-
-    const OrdersBreakfastPage = "/breakfast/:productsByType"
-    const OrdersLunchPage = "/lunch"
-
 
     const goToTakingLunchOrder = (e) => {
         setTypeMenuWaiter(e.target.value);
@@ -27,25 +21,17 @@ const SelectProductForType = () => {
     }
 
 
-    useEffect(() =>{ 
-    
-        typeMenuWaiter === "Desayuno" && navigate(OrdersBreakfastPage);
-        typeMenuWaiter === "Almuerzo" && navigate(OrdersLunchPage);
-
-    }, [typeMenuWaiter, navigate])
-
-    
-
     return (
         <>
             <article
                 className="breakfast"
                 onClick={goToTakingBreakfastOrder}
-                typemenuwaiter={typeMenuWaiter}>
-                <button className="breakfastImage" value="Desayuno" typemenuwaiter={typeMenuWaiter} onClick={goToTakingBreakfastOrder}>
-                </button>
-                <button className="breakfastTitle" value="Desayuno" typemenuwaiter={typeMenuWaiter} onClick={goToTakingBreakfastOrder}>
-                </button>
+                typemenuwaiter={typeMenuWaiter}
+            >
+                <Link className="breakfastImage" value="Desayuno" typemenuwaiter={typeMenuWaiter} onClick={goToTakingBreakfastOrder} to="/Breakfast">
+                </Link>
+                <Link className="breakfastTitle" value="Desayuno" typemenuwaiter={typeMenuWaiter} onClick={goToTakingBreakfastOrder} to="/Breakfast">
+                </Link>
             </article>
 
             <article
@@ -53,9 +39,10 @@ const SelectProductForType = () => {
                 onClick={goToTakingLunchOrder}
                 value="Almuerzo"
                 typemenuwaiter={typeMenuWaiter}>
-                <button className="lunchTitle" value="Almuerzo" typemenuwaiter={typeMenuWaiter} onClick={goToTakingLunchOrder}>
-                </button>
-                <button className="lunchImage" value="Almuerzo" typemenuwaiter={typeMenuWaiter} onClick={goToTakingLunchOrder}></button>
+                <Link className="lunchTitle" value="Almuerzo" typemenuwaiter={typeMenuWaiter} onClick={goToTakingLunchOrder} to="/Lunch">
+                </Link>
+                <Link className="lunchImage" value="Almuerzo" typemenuwaiter={typeMenuWaiter} onClick={goToTakingLunchOrder} to="/Lunch">
+                </Link>
             </article>
         </>
     )
