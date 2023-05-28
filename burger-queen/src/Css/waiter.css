@@ -3,7 +3,8 @@
    
 }
 .mainHeader{
-    display: grid;
+    display: flex
+
 }
 .waiterBody{
     margin: 0;
@@ -39,9 +40,24 @@ button{
     border: none;
 }
 .mainLogo{
-    width: 48px;
-    align-self: center;
+    position: relative;
+    width: 48px; 
+    margin: auto;
+
 }
+.returnButton{
+    background: url('C:\Users\PROFESSIONAL\Documents\Javascript\Burger-queen\BOG005-burger-queen-api-client\burger-queen\src\Resources\return.png');
+    background-size:contain;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 15px;
+    left: 10px;
+    z-index: 2;
+    width: 50px;
+    height: 40px;
+}
+
+
 .breakfast{
     display: flex;
     width: 100%;

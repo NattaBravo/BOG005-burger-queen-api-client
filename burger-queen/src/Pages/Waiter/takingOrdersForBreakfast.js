@@ -1,4 +1,4 @@
-import { HeaderBQ } from "../../Components/Header"
+import { HeaderBQ } from "../../Components/header.js"
 import FooterBQ from "../../Components/footer";
 
 
@@ -6,7 +6,7 @@ import FooterBQ from "../../Components/footer";
 const TakingOrdersBreakfastPage = (productsByType) => {
 
 
-  console.log( productsByType)
+  console.log( productsByType , "roba bebe")
 
 
 

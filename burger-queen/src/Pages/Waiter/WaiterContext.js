@@ -25,8 +25,11 @@ const WaiterProvider = ({ children }) => {
       .catch(error => error);
   }, []);
 
+
+  console.log(productItem, "Desde WaiterContext", typeof(productItem))
+  /*
   let productsByType;
- 
+
   if (typeMenuWaiter) {
     let filteredProducts = productItem.filter(unitProduct => {
       const typeForEachProduct = unitProduct.type;
@@ -34,7 +37,7 @@ const WaiterProvider = ({ children }) => {
     })
     productsByType = filteredProducts;
     console.log(productsByType, "esto fue")
-  }
+  }*/
 
 
 
@@ -46,11 +49,9 @@ const WaiterProvider = ({ children }) => {
         setProductItem,
         typeMenuWaiter,
         setTypeMenuWaiter,
-        productsByType,
       }}
     >
       {children}
-
     </WaiterContext.Provider>)
 }
 

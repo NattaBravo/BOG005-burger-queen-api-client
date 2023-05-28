@@ -1,22 +1,23 @@
-import { HeaderBQ } from "../../Components/Header"
+//import { HeaderBQ } from "../../Components/Header"
 import FooterBQ from "../../Components/footer";
 import { SelectProductForType } from "../../Components/selectProductForType";
 import { usePropsFromWaiter } from "./WaiterContext";
-import TakingOrdersBreakfastPage from "./takingOrdersForBreakfast";
+import { TakingOrdersLunchPage } from './takingOrdersForLunch';
+import { HeaderBQ } from "../../Components/header";
 
 
 function WaiterUI() {
 
   const {
-    productsByType,
-    //typeMenuWaiter,
-    //setTypeMenuWaiter
+    productItem
   } = usePropsFromWaiter();
+
+  console.log(productItem, typeof (productItem), "desdeWaiterUI")
 
   return (
     <>
       <section>
-      < HeaderBQ />
+        <HeaderBQ />
       </section>
 
       <section className='waiterBody'>
@@ -28,9 +29,11 @@ function WaiterUI() {
         </section>
 
         <h2>PRODUCTOS</h2>
-        <SelectProductForType>
-          <TakingOrdersBreakfastPage
-           productsByType={productsByType}/>
+        <SelectProductForType
+          productItem={productItem}
+        >
+          <TakingOrdersLunchPage
+            productItem={productItem} />
         </SelectProductForType>
 
         <h2>TABLE STATE</h2>
