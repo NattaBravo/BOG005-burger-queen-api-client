@@ -15,6 +15,20 @@ async function CreateUser(data) {
   return responseData;
 };
 
+async function GetUser(data) {
+  const token = localStorage.getItem("token")
+  const url = `http://localhost:8080/users`
+  const responseData = await axios(url, {
+    method: 'GET',
+    data,
+    headers: {
+      'content-Type': 'application/json',
+      'authorization': `Bearer ${token}`
+    },
+  });
+  return responseData;
+};
+
 
 
 //Pintar la data
@@ -36,7 +50,7 @@ async function GetProducts() {
 async function PostProducts(data) {
   const token = localStorage.getItem("token")
   const url = `http://localhost:8080/products`
-  
+
   const responseData = await axios(url, {
     method: 'POST',
     data,
@@ -54,7 +68,7 @@ async function PostProducts(data) {
 async function DeleteProducts(id) {
   const token = localStorage.getItem("token")
   const url = `http://localhost:8080/products/`
-  
+
   const responseData = await axios(url + id, {
     method: 'DELETE',
     headers: {
@@ -71,7 +85,7 @@ async function DeleteProducts(id) {
 async function EditProducts(data, id) {
   const token = localStorage.getItem("token")
   const url = `http://localhost:8080/products/`
-  
+
   const responseData = await axios(url + id, {
     method: 'PUT',
     data,
@@ -91,6 +105,7 @@ async function EditProducts(data, id) {
 export {
   CreateUser,
   GetProducts,
+  GetUser,
   PostProducts,
   DeleteProducts,
   EditProducts

@@ -1,0 +1,21 @@
+*{
+    margin: o;
+    padding: 0;
+}
+
+.card{
+    width: 150px;
+    height: 200px;
+    background-color: white;
+    border-radius: 10px;
+}
+.imageCard{
+    background-color: black;
+    border-radius: 50%;
+    width: 100px;
+    margin: auto;
+}
+
+.imageForProduct{
+    width: 100px;
+}

@@ -1,10 +1,10 @@
 import { React, useState, useEffect, createContext, useContext } from "react";
-import { GetProducts } from "../Requests";
+import { GetProducts, GetUser } from "./Requests";
 
 
-const WaiterContext = createContext();
+const GeneralContext = createContext();
 
-const WaiterProvider = ({ children }) => {
+const GeneralProvider = ({ children }) => {
 
   const [productItem, setProductItem] = useState([]);
 
@@ -27,6 +27,10 @@ const WaiterProvider = ({ children }) => {
 
 
   console.log(productItem, "Desde WaiterContext", typeof(productItem))
+
+  GetUser()
+  .then(res => console.log(res))
+  .catch(error => error)
   /*
   let productsByType;
 
@@ -43,7 +47,7 @@ const WaiterProvider = ({ children }) => {
 
 
   return (
-    <WaiterContext.Provider
+    <GeneralContext.Provider
       value={{
         productItem,
         setProductItem,
@@ -52,11 +56,11 @@ const WaiterProvider = ({ children }) => {
       }}
     >
       {children}
-    </WaiterContext.Provider>)
+    </GeneralContext.Provider>)
 }
 
-const usePropsFromWaiter = () => (
-  useContext(WaiterContext)
+const usePropsFromGeneralContext = () => (
+  useContext(GeneralContext)
 );
 
-export { WaiterProvider, usePropsFromWaiter, WaiterContext };
+export { GeneralProvider, usePropsFromGeneralContext, GeneralContext };

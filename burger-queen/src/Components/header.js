@@ -14,15 +14,12 @@ function HeaderBQ() {
     return (
         <React.Fragment>
             <header className='mainHeader'>
-                <button onClick={returnFunction} className="returnButton">Return</button>
+                <button onClick={returnFunction} className="returnButton" />
                 <img src={logoBQ} alt="" className='mainLogo'></img>
                 <nav>
                     <ul>
                         <li>
-                            <Link to="/waiter">Waiter Page</Link>
-                        </li>
-                        <li>
-                            <Link to="/Breakfast">Desayunos</Link>
+                            <Link to="/waiter">Home</Link>
                         </li>
                         <li>
                             <Link to="/">Cerrar sesión</Link>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CreateUser } from "../Requests";
+import { CreateUser } from "../../Context/Requests";
 
 const FormModalForRegister = ({ openRegisterModal, setOpenRegisterModal }) => {
 
@@ -7,11 +7,16 @@ const FormModalForRegister = ({ openRegisterModal, setOpenRegisterModal }) => {
         setOpenRegisterModal(false)
     }
 
+    const [nameforRegister, setNameforRegister] = useState("");
     const [emailforRegister, setEmailforRegister] = useState("");
     const [passwordforRegister, setPasswordforRegister] = useState("");
     const [roleForRegister, setRoleForRegister] = useState("");
 
 
+    const onChangeName = (e) => {
+        console.log(e.target.value)
+        setNameforRegister(e.target.value)
+    }
     const onChangeEmail = (e) => {
         setEmailforRegister(e.target.value)
     }
@@ -23,6 +28,7 @@ const FormModalForRegister = ({ openRegisterModal, setOpenRegisterModal }) => {
     }
 
     const infoForRegister = {
+        "name": nameforRegister,
         "email": emailforRegister,
         "password": passwordforRegister,
         "role": roleForRegister,
@@ -50,6 +56,12 @@ const FormModalForRegister = ({ openRegisterModal, setOpenRegisterModal }) => {
                     onClick={closeRegisterModal}>X</button>
             </div>
             <form onSubmit={onSubmit} className="formModal">
+
+                <h2>Nombre:</h2>
+                <input
+                    value={nameforRegister}
+                    onChange={onChangeName}></input>
+
                 <h2>Email:</h2>
                 <input
                     value={emailforRegister}

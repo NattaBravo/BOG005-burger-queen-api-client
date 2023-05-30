@@ -29,11 +29,11 @@ h2{
 }
 h3{
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
 
 }
 p{
-    font-weight: 400;
+    font-weight: 500;
     font-size: 20px;
 }
 button{
@@ -105,7 +105,6 @@ button{
     width: 100%;
 }
 .tableStateTitle{
-    font-weight: 400;
     width: 100px;
     text-align: center;
     left: 70%;
@@ -121,11 +120,9 @@ button{
 .ordersTitle{
     left: 25px;
     position: relative;
-    align-self: center;
-    width: 180px;
-    font-weight: 400;
+    width: 150px;
     text-align: center;
-    top: 30px;
+    top: -30px;
     font-size: 25px;
 }
 .mainFooter{

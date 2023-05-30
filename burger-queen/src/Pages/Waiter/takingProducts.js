@@ -1,19 +1,25 @@
 import { useParams } from "react-router-dom";
 import { HeaderBQ } from "../../Components/header.js"
-import FooterBQ from "../../Components/footer";
+import FooterBQ from "../../Components/footer.js";
+import { usePropsFromGeneralContext } from "../../Context/GeneralContext.js";
+import { CardsForProducts } from "../../Components/cardsForProducts.js";
 
 
 
-const TakingOrdersLunchPage = () => {
+const TakingProductsPage = () => {
 
-  const {id} = useParams()
-  
-  
+  const { id } = useParams()
+
+  const {
+    productItem
+  } = usePropsFromGeneralContext();
+
+  console.log(productItem)
+
   return (
     <>
-    <p>Yo todo lo puedo {id}</p>
 
-    <section>
+      <section>
         < HeaderBQ />
       </section>
 
@@ -21,13 +27,19 @@ const TakingOrdersLunchPage = () => {
 
         <section className="wellcome">
           <h1>
-            DESAYUNOS
+            {id}
           </h1>
         </section>
 
         <section>
           <h2>ENTRADAS</h2>
 
+          {productItem.map(unitProduct => (
+            <CardsForProducts 
+            unitProduct={unitProduct}
+            />
+          ))
+          }
         </section>
 
         <section>
@@ -50,4 +62,4 @@ const TakingOrdersLunchPage = () => {
   );
 }
 
-export { TakingOrdersLunchPage };
+export { TakingProductsPage };

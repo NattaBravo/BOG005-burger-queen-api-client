@@ -1,10 +1,10 @@
 import React from 'react';
-import {createRoot} from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import Login from './Pages/Login/Login';
 import WaiterPage from './Pages/Waiter/WaiterMainPage';
 import AdministratorPage from './Pages/Admin/AdminMainPage';
-import { TakingOrdersLunchPage } from './Pages/Waiter/takingOrdersForLunch';
-import TakingOrdersBreakfastPage from './Pages/Waiter/takingOrdersForBreakfast';
+import { TakingProductsPage } from './Pages/Waiter/takingProducts';
+import { GeneralProvider } from './Context/GeneralContext';
 
 
 import {
@@ -16,14 +16,15 @@ import {
 const root = createRoot(document.getElementById('principalRoot'));
 root.render(
    <HashRouter>
-      <Routes>
-         <Route path="/" element={<Login />}/>
-         <Route path="/waiter" element={<WaiterPage />}/>
-         <Route path="/admin" element={<AdministratorPage />}/>
-         <Route path="/waiter/:id" element={<TakingOrdersLunchPage />}/>
-         <Route path="/breakfast" element={<TakingOrdersBreakfastPage />}/>
-      
-      </Routes>
+      <GeneralProvider>
+         <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/waiter" element={<WaiterPage />} />
+            <Route path="/waiter/:id" element={<TakingProductsPage />} />
+
+            <Route path="/admin" element={<AdministratorPage />} />
+         </Routes>
+      </GeneralProvider>
    </HashRouter>
 );
 

@@ -1,5 +1,5 @@
 import { React, useEffect, useState, createContext, useContext } from "react";
-import { GetProducts, PostProducts, EditProducts, DeleteProducts } from "../Requests";
+import { GetProducts, PostProducts, EditProducts, DeleteProducts } from "../../Context/Requests";
 
 
 
