@@ -6,17 +6,20 @@ const CardsForProducts = (unitProduct) => {
 
     const data = unitProduct.unitProduct
 
-
-
-
     return (
-        <section className='card'>
 
+        <article className='card'>
             <article className='imageCard'>
                 <img alt="" src={data.image} className="imageForProduct"></img>
             </article>
-            <h2>{data.name}</h2>
-        </section>
+            <h5 className='productDescription'>{data.name}</h5>
+            <h4 className='price'>$ {data.price}</h4>
+            <article className='selector'>
+                <button>+</button>
+                <p className='counter'></p>
+                <button>-</button>
+            </article>
+        </article>
     )
 }
 

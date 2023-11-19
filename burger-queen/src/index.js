@@ -5,7 +5,8 @@ import WaiterPage from './Pages/Waiter/WaiterMainPage';
 import AdministratorPage from './Pages/Admin/AdminMainPage';
 import { TakingProductsPage } from './Pages/Waiter/takingProducts';
 import { GeneralProvider } from './Context/GeneralContext';
-
+import { TableStatePage } from './Pages/Waiter/tableState';
+import { OrderPage } from './Pages/Waiter/orderPage';
 
 import {
    HashRouter,
@@ -20,9 +21,10 @@ root.render(
          <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/waiter" element={<WaiterPage />} />
-            <Route path="/waiter/:id" element={<TakingProductsPage />} />
-
+            <Route path="/waiter/:id" element={<TakingProductsPage /> } />
             <Route path="/admin" element={<AdministratorPage />} />
+            <Route path="/waiter/tablestate" element={<TableStatePage />} />
+            <Route path="/waiter/orderPage" element={<OrderPage />} />
          </Routes>
       </GeneralProvider>
    </HashRouter>

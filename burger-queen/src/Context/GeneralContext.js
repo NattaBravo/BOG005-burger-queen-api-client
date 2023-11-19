@@ -31,17 +31,7 @@ const GeneralProvider = ({ children }) => {
   GetUser()
   .then(res => console.log(res))
   .catch(error => error)
-  /*
-  let productsByType;
-
-  if (typeMenuWaiter) {
-    let filteredProducts = productItem.filter(unitProduct => {
-      const typeForEachProduct = unitProduct.type;
-      return typeForEachProduct.includes(typeMenuWaiter)
-    })
-    productsByType = filteredProducts;
-    console.log(productsByType, "esto fue")
-  }*/
+  
 
 
 

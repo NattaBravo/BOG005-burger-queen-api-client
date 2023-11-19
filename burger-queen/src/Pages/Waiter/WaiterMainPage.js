@@ -4,15 +4,18 @@ import FooterBQ from "../../Components/footer";
 import { SelectProductForType } from "../../Components/selectProductForType";
 import { usePropsFromGeneralContext } from "../../Context/GeneralContext";
 import { HeaderBQ } from "../../Components/header";
+import { Link } from 'react-router-dom';
 
 
 export default WaiterPage;
+
 
 function WaiterPage() {
 
   const {
     productItem
   } = usePropsFromGeneralContext();
+
 
   console.log(productItem, typeof (productItem), "desdeWaiterUI")
 
@@ -34,19 +37,17 @@ function WaiterPage() {
         <SelectProductForType
           productItem={productItem}
         >
-          {/*<TakingOrdersLunchPage
-            productItem={productItem} />*/}
         </SelectProductForType>
 
         <h2>TABLE STATE</h2>
-        <button className="tableState">
+        <Link className="tableState" to="tableState">
           <p className="tableStateTitle">OBSERVA EL MAPA DE TUS MESAS Y SU ESTADO ACTUAL</p>
-        </button>
+        </Link>
 
         <h2>ÓRDENES</h2>
-        <button className="clickToOrders">
+        <Link className="clickToOrders" to="orderPage">
           <p className="ordersTitle">SIGUE AQUÍ TODAS LAS ÓRDENES EN TIEMPO REAL</p>
-        </button>
+        </Link>
 
         < FooterBQ />
 

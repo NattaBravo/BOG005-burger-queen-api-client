@@ -36,6 +36,11 @@ p{
     font-weight: 500;
     font-size: 20px;
 }
+h5{
+    font-size: 18px;
+    font-weight: 500;
+
+}
 button{
     border: none;
 }
@@ -114,12 +119,14 @@ button{
 .clickToOrders{
     background: url("C:\Users\PROFESSIONAL\Documents\Javascript\Burger-queen\BOG005-burger-queen-api-client\burger-queen\src\Resources\orderWall.jpg");
     background-size: cover;
+    display: flex;
     height: 250px;  
     width: 100%;
 }
 .ordersTitle{
     left: 25px;
     position: relative;
+    padding-top: 50px;
     width: 150px;
     text-align: center;
     top: -30px;
@@ -170,4 +177,10 @@ button{
     font-style: oblique;
     text-align: center;
     margin: 15px 30px 30px 30px;
+}
+.flowButton{
+    background-color: #EFC13B ;
+    width: 246px;
+    height: 34px;
+    align-self: center;
 }

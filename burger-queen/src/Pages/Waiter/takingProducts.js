@@ -3,6 +3,7 @@ import { HeaderBQ } from "../../Components/header.js"
 import FooterBQ from "../../Components/footer.js";
 import { usePropsFromGeneralContext } from "../../Context/GeneralContext.js";
 import { CardsForProducts } from "../../Components/cardsForProducts.js";
+import { Button } from "reactstrap";
 
 
 
@@ -10,11 +11,13 @@ const TakingProductsPage = () => {
 
   const { id } = useParams()
 
+  const title = id.toUpperCase();
+
   const {
     productItem
   } = usePropsFromGeneralContext();
 
-  console.log(productItem)
+  console.log(productItem, title)
 
   return (
     <>
@@ -27,12 +30,12 @@ const TakingProductsPage = () => {
 
         <section className="wellcome">
           <h1>
-            {id}
+            {title}
           </h1>
         </section>
 
-        <section>
           <h2>ENTRADAS</h2>
+        <section className="horizontalScroll">
 
           {productItem.map(unitProduct => (
             <CardsForProducts 
@@ -55,9 +58,11 @@ const TakingProductsPage = () => {
           <h2>POSTRES</h2>
 
         </section>
+      <Button className="flowButton">GUARDAR</Button>
 
         <FooterBQ />
       </section>
+
     </>
   );
 }
