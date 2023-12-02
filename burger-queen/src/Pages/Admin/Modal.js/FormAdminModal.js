@@ -15,6 +15,8 @@ function FormWaiterModal({ title, setTitle }) {
     const [priceProd, setPriceProd] = useState("");
     const [linkImage, setLinkImage] = useState("");
     const [typeProduct, setTypeProduct] = useState("");
+    const [kindProduct, setKindProduct] = useState("");
+
 
     const onChangeName = (e) => {
         setNameProd(e.target.value)
@@ -28,12 +30,16 @@ function FormWaiterModal({ title, setTitle }) {
     const onChangeType = (e) => {
         setTypeProduct(e.target.value)
     }
+    const onChangeKind = (e) => {
+        setKindProduct(e.target.value)
+    }
 
     const infoData = {
         "name": nameProd,
         "price": priceProd,
         "image": linkImage,
         "type": typeProduct,
+        "kind": kindProduct,
     }
 
     const onSubmit = (event) => {
@@ -46,12 +52,16 @@ function FormWaiterModal({ title, setTitle }) {
                 <h2>{title} Producto</h2>
             </div>
             <form onSubmit={onSubmit}>
+
                 <h4>Nombre del producto:</h4>
                 <input className="name" onChange={onChangeName} value={nameProd}></input>
+
                 <h4>Precio:</h4>
                 <input className="price" value={priceProd} onChange={onChangePrice}></input>
+
                 <h4>Imagen:</h4>
                 <input className="image" placeholder="Inserta el link de la imagen de tu producto" value={linkImage} onChange={onChangeImage}></input>
+
                 <article className="selectSection">
                     <h4>Tipo de producto</h4>
                     <select className="selectType" onChange={onChangeType}>
@@ -59,7 +69,22 @@ function FormWaiterModal({ title, setTitle }) {
                         <option>Desayuno</option>
                         <option>Almuerzo</option>
                     </select>
+
                 </article>
+                <article className="selectSection">
+                    <h4>Plato:</h4>
+                    <select className="selectType" onChange={onChangeKind}>
+                        <option>Selecciona</option>
+                        <option>Entrada</option>
+                        <option>Plato fuerte</option>
+                        <option>Bebida</option>
+                        <option>Postre</option>
+                    </select>
+
+
+                </article>
+
+
                 <br></br>
                 {
                     (title === "Crear" &&

@@ -25,6 +25,11 @@ const AdminProvider = ({ children }) => {
         const allProducts = res.data;
         allProducts.forEach(element => {
           element.counter = 0;
+      /*    if(element.name === "Sandwich de jamón y queso"){
+            element.kind = "Plato fuerte"
+          } else if(){
+            element.kind = "Bebida"
+          }*/
         });
         setProductItem(allProducts);
       })
@@ -54,8 +59,6 @@ const AdminProvider = ({ children }) => {
   }
 
   const EditRequest = (infoData, idProduct) => {
-    //console.log(infoData, "momentico");
-    //console.log(idProduct, "momentico")
     EditProducts(infoData, idProduct)
       .then(res => {
         setProductItem(data.map(element =>

@@ -10,6 +10,7 @@
     margin: 0;
     background-color: #F2E9E0;
     height: 100%;
+    display:grid;
 }
 .wellcome{
     padding: 20px 16px 0px 16px;
@@ -178,9 +179,12 @@ button{
     text-align: center;
     margin: 15px 30px 30px 30px;
 }
-.flowButton{
+.saveButton{
     background-color: #EFC13B ;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 20px;
     width: 246px;
-    height: 34px;
-    align-self: center;
+    height: 40px;
+    margin: auto;
 }

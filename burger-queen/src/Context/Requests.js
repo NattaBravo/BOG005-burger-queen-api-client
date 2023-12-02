@@ -100,13 +100,11 @@ async function EditProducts(data, id) {
 
 
 
-
-
 export {
   CreateUser,
   GetProducts,
   GetUser,
   PostProducts,
   DeleteProducts,
-  EditProducts
+  EditProducts,
 }

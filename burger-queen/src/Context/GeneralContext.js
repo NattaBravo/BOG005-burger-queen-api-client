@@ -1,5 +1,5 @@
 import { React, useState, useEffect, createContext, useContext } from "react";
-import { GetProducts, GetUser } from "./Requests";
+import { GetProducts, } from "./Requests";
 
 
 const GeneralContext = createContext();
@@ -18,6 +18,11 @@ const GeneralProvider = ({ children }) => {
         const allProducts = res.data;
         allProducts.forEach(element => {
           element.counter = 0;
+          if(element.name === "Sandwich de jamón y queso"){
+            element.kind = "Plato fuerte"
+          } else if (element.name === "Agua 500ml" || element.name === "Café americano" ){
+            element.kind = "Bebida"
+          }
         });
         setProductItem(allProducts);
         console.log(allProducts);
@@ -27,13 +32,6 @@ const GeneralProvider = ({ children }) => {
 
 
   console.log(productItem, "Desde WaiterContext", typeof(productItem))
-
-  GetUser()
-  .then(res => console.log(res))
-  .catch(error => error)
-  
-
-
 
 
   return (

@@ -4,7 +4,7 @@ function OrderPage() {
     return(
         <section>
             <HeaderBQ></HeaderBQ>
-            <p>Porque tal vez deje todo roto</p>
+            <p>Te lo juro no te vas a arrepentir</p>
 
         </section>
     )
