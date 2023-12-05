@@ -25,11 +25,6 @@ const AdminProvider = ({ children }) => {
         const allProducts = res.data;
         allProducts.forEach(element => {
           element.counter = 0;
-      /*    if(element.name === "Sandwich de jamón y queso"){
-            element.kind = "Plato fuerte"
-          } else if(){
-            element.kind = "Bebida"
-          }*/
         });
         setProductItem(allProducts);
       })

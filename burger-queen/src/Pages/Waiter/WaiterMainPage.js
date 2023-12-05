@@ -2,7 +2,7 @@ import { React } from 'react';
 import '../../Css/waiter.css'
 import FooterBQ from "../../Components/footer";
 import { SelectProductForType } from "../../Components/selectProductForType";
-import { usePropsFromGeneralContext } from "../../Context/GeneralContext";
+//import { usePropsFromGeneralContext } from "../../Context/GeneralContext";
 import { HeaderBQ } from "../../Components/header";
 import { Link } from 'react-router-dom';
 
@@ -12,12 +12,8 @@ export default WaiterPage;
 
 function WaiterPage() {
 
-  const {
-    productItem
-  } = usePropsFromGeneralContext();
 
-
-  console.log(productItem, typeof (productItem), "desdeWaiterUI")
+ // console.log(productItem, typeof (productItem), "desdeWaiterUI")
 
   return (
     <>
@@ -35,7 +31,6 @@ function WaiterPage() {
 
         <h2>PRODUCTOS</h2>
         <SelectProductForType
-          productItem={productItem}
         >
         </SelectProductForType>
 

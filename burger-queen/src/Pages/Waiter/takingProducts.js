@@ -4,18 +4,28 @@ import FooterBQ from "../../Components/footer.js";
 import { usePropsFromGeneralContext } from "../../Context/GeneralContext.js";
 import { CardsForProducts } from "../../Components/cardsForProducts.js";
 import { Button } from "reactstrap";
+import { useState } from "react";
+import { Modal } from '../Admin/Modal.js/Modal'
+import { FormModaltoOrder } from "./formModaltoOrder.js";
 
 
 
 const TakingProductsPage = () => {
 
+
+  const [openOrderModal, setOpenOrderModal] = useState(false);
+
+
+  // Función para filtrar productos por tipo.
+
   let { id } = useParams()
 
   const title = id.toUpperCase();
 
-
   const {
-    productItem
+    productItem,
+    selectedProductsForOrder,
+    createOrder
   } = usePropsFromGeneralContext();
 
   if (id === "breakfast") {
@@ -33,8 +43,13 @@ const TakingProductsPage = () => {
     return productsSelected
   })
 
+  // Función para abrir modal solicitud de órden
 
-  console.log(id, productsSelected)
+  const openOrderModalFunction = () => {
+    setOpenOrderModal(true)
+  }
+
+
   return (
     <>
 
@@ -53,7 +68,10 @@ const TakingProductsPage = () => {
         <h2>ENTRADAS</h2>
         <section className="horizontalScroll">
           {productsSelected.map(unitProduct => (
-            (unitProduct.kind === "Entrada" && <CardsForProducts unitProduct={unitProduct} />
+            (unitProduct.kind === "Entrada" && <CardsForProducts
+              key={unitProduct.id}
+              unitProduct={unitProduct}
+              onOrder={() => { selectedProductsForOrder(unitProduct.id) }} />
             )))
           }
         </section>
@@ -61,7 +79,11 @@ const TakingProductsPage = () => {
         <h2>PLATOS FUERTES</h2>
         <section className="horizontalScroll">
           {productsSelected.map(unitProduct => (
-            (unitProduct.kind === "Plato fuerte" && <CardsForProducts unitProduct={unitProduct} />)))
+            (unitProduct.kind === "Plato fuerte" && <CardsForProducts
+              unitProduct={unitProduct}
+              key={unitProduct.id}
+              onOrder={() => { selectedProductsForOrder(unitProduct.id) }}
+            />)))
           }
         </section>
 
@@ -69,18 +91,33 @@ const TakingProductsPage = () => {
         <h2>BEBIDAS</h2>
         <section className="horizontalScroll">
           {productsSelected.map(unitProduct => (
-            (unitProduct.kind === "Bebida" && <CardsForProducts unitProduct={unitProduct} />)))
+            (unitProduct.kind === "Bebida" && <CardsForProducts
+              unitProduct={unitProduct}
+              key={unitProduct.id}
+              onOrder={() => { selectedProductsForOrder(unitProduct.id) }} />)))
           }
         </section>
 
         <h2>POSTRES</h2>
         <section className="horizontalScroll">
           {productsSelected.map(unitProduct => (
-            (unitProduct.kind === "Postre" && <CardsForProducts unitProduct={unitProduct} />)))
+            (unitProduct.kind === "Postre" && <CardsForProducts
+              unitProduct={unitProduct}
+              key={unitProduct.id}
+              onOrder={() => { selectedProductsForOrder(unitProduct.id) }} />)))
           }
         </section>
 
-        <Button className="saveButton">GUARDAR</Button>
+        <Button className="saveButton" onClick={openOrderModalFunction}>GUARDAR</Button>
+
+        {!!openOrderModal && (
+          <Modal>
+            <FormModaltoOrder
+              openOrderModal={openOrderModal}
+              setOpenOrderModal={setOpenOrderModal} 
+              onCreateORder={createOrder()}/>
+          </Modal>
+        )}
 
         <FooterBQ />
       </section>

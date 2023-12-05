@@ -1,14 +1,14 @@
 import '../Css/cards.css';
 
-const CardsForProducts = (unitProduct) => {
+const CardsForProducts = (props) => {
 
-    console.log(unitProduct.unitProduct.name)
 
-    const data = unitProduct.unitProduct
+    const data = props.unitProduct
 
     return (
 
-        <article className='card'>
+        <article className='card' onClick={() => props.onOrder()}>
+
 
             <article className='imageCard'>
                 <img alt="" src={data.image} className="imageForProduct"></img>
@@ -16,10 +16,11 @@ const CardsForProducts = (unitProduct) => {
             <h5 className='productDescription'>{data.name}</h5>
             <h4 className='price'>$ {data.price}</h4>
             <article className='selector'>
-                <button></button>
-                <p className='counter'></p>
-                <button></button>
+                <button>-</button>
+                <p className='counter'>{data.counter}</p>
+                <button>+</button>
             </article>
+
         </article>
     )
 }
