@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 const SelectProductForType = (props) => {
 
 
-    const productData = props.productItem;
+   // const productData = props.productItem;
 
     return (
-        <>
+        <section className="selectorsForType">
             <article
                 className="breakfast"
             >
@@ -24,7 +24,7 @@ const SelectProductForType = (props) => {
                 <Link className="lunchImage" to="lunch">
                 </Link>
             </article>
-        </>
+        </section>
     )
 }
 

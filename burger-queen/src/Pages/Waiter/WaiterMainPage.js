@@ -13,8 +13,6 @@ export default WaiterPage;
 function WaiterPage() {
 
 
- // console.log(productItem, typeof (productItem), "desdeWaiterUI")
-
   return (
     <>
       <section>
